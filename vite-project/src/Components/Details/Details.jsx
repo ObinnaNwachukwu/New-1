@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'
 
 const Details = ({ theSetter }) => {
   const { id } = useParams()
-  const amount = useSelector ((state)=> state.commerce.amount)
+  const amount = useSelector((state) => state.commerce.amount)
   const dispatch = useDispatch()
   const [products, setProducts] = useState([]);
 
@@ -51,14 +51,16 @@ const Details = ({ theSetter }) => {
             <h5>Rating: 3.5</h5>
           </div>
           <div
-            onClick={(amount) => {dispatch(addToCart(products)); dispatch(total())
+            onClick={(amount) => {
+              dispatch(addToCart(products)); dispatch(total())
               Swal.fire({
                 position: 'top-end',
                 icon: 'success',
                 title: 'Your item has been added',
                 showConfirmButton: false,
                 timer: 2000
-              })}}
+              })
+            }}
             className="Detail-button">
             Add to cart
           </div>
